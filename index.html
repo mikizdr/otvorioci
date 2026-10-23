@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#193b2d">
+    <meta name="description" content="Отворена листа тема за разговор, провере и заједничко деловање у Кршевици.">
+    <title>Кршевица, наше место — заједничка листа</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pine: '#193b2d',
+                        moss: '#38654a',
+                        lime: '#d8f078',
+                        paper: '#f5f5ef',
+                        ink: '#1c2821',
+                        clay: '#b8583b'
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        display: ['Manrope', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        :root { color-scheme: light; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; }
+        .terrain {
+            background-color: #244b36;
+            background-image: repeating-radial-gradient(ellipse at 72% 38%, transparent 0 18px, rgba(216,240,120,.14) 19px 20px, transparent 21px 37px), repeating-radial-gradient(ellipse at 20% 85%, transparent 0 25px, rgba(255,255,255,.09) 26px 27px, transparent 28px 49px);
+        }
+        .fade-up { animation: rise .6s ease-out both; }
+        @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; } }
+    </style>
+</head>
+<body class="bg-paper text-ink antialiased">
+    <header class="border-b border-pine/10 bg-paper">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+            <a href="#pocetak" class="flex items-center gap-3" aria-label="Кршевица, почетак">
+                <span class="grid h-10 w-10 place-items-center rounded-full bg-pine text-sm font-extrabold text-lime">К.</span>
+                <span class="font-display text-sm font-extrabold tracking-wide">КРШЕВИЦА <span class="font-medium text-pine/60">/ НАШЕ МЕСТО</span></span>
+            </a>
+            <nav class="hidden items-center gap-7 text-sm font-semibold md:flex" aria-label="Главна навигација">
+                <a class="hover:text-moss" href="#teme">Теме</a>
+                <a class="hover:text-moss" href="#kako">Шта можемо</a>
+                <a class="hover:text-moss" href="#dodaj">Предложи тему</a>
+            </nav>
+            <a href="#dodaj" class="rounded-full bg-pine px-4 py-2.5 text-sm font-bold text-white transition hover:bg-moss">Укључи се <span aria-hidden="true">↗</span></a>
+        </div>
+    </header>
+
+    <main id="pocetak">
+        <section class="terrain relative isolate overflow-hidden text-white">
+            <div class="absolute inset-0 -z-10 bg-gradient-to-r from-pine/95 via-pine/80 to-pine/30"></div>
+            <div class="mx-auto grid min-h-[510px] max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.15fr_.85fr] lg:py-24">
+                <div class="fade-up max-w-3xl">
+                    <p class="mb-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.16em] text-lime"><span class="h-2 w-2 rounded-full bg-lime"></span> Отворен документ мештана</p>
+                    <h1 class="font-display text-5xl font-extrabold leading-[1.05] sm:text-6xl lg:text-7xl">Наше село.<br><span class="text-lime">Наше је и шта ћемо с њим.</span></h1>
+                    <p class="mt-6 max-w-xl text-lg leading-8 text-white/85">Кршевица може боље. Почнимо од онога што примећујемо, проверимо чињенице и договоримо се шта можемо да променимо заједно.</p>
+                    <div class="mt-9 flex flex-wrap gap-3">
+                        <a href="#teme" class="rounded-full bg-lime px-6 py-3 font-bold text-pine transition hover:bg-white">Погледај теме <span aria-hidden="true">↓</span></a>
+                        <a href="#kako" class="rounded-full border border-white/40 px-6 py-3 font-bold transition hover:bg-white/10">Како да кренемо</a>
+                    </div>
+                </div>
+                <div class="relative hidden min-h-[320px] lg:block" aria-label="Илустрација мапе и места за заједничке идеје" role="img">
+                    <div class="absolute right-3 top-8 h-64 w-64 rounded-full border border-lime/35"></div>
+                    <div class="absolute right-12 top-16 h-48 w-48 rounded-full border border-lime/30"></div>
+                    <div class="absolute right-20 top-24 h-32 w-32 rounded-full border border-lime/25"></div>
+                    <div class="absolute right-0 top-32 h-px w-full rotate-[-24deg] bg-lime/60"></div>
+                    <div class="absolute right-20 top-2 h-px w-64 rotate-[38deg] bg-white/35"></div>
+                    <div class="absolute right-32 top-28 h-3 w-3 rounded-full bg-lime ring-8 ring-lime/20"></div>
+                    <div class="absolute right-2 top-52 rounded-xl border border-white/20 bg-pine/70 px-4 py-3 backdrop-blur-sm"><span class="block text-xs uppercase tracking-widest text-lime">Једна заједница</span><span class="font-display text-lg font-bold">Много малих корака</span></div>
+                    <div class="absolute right-56 top-8 rounded-xl border border-white/20 bg-pine/70 px-4 py-3 backdrop-blur-sm"><span class="block text-xs uppercase tracking-widest text-white/60">Кренимо од</span><span class="font-display text-lg font-bold">разговора</span></div>
+                </div>
+            </div>
+            <div class="border-t border-white/15 bg-black/10">
+                <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-4 text-sm sm:px-8">
+                    <p class="text-white/75">Ово није списак оптужби. То је позив да заједно утврдимо шта је важно.</p>
+                    <span class="font-semibold text-lime">Питај · провери · предложи · уради</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20" id="teme">
+            <div class="flex flex-col justify-between gap-6 border-b border-ink/15 pb-7 md:flex-row md:items-end">
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-[.16em] text-clay">01 / Отворена листа</p>
+                    <h2 class="mt-3 font-display text-3xl font-extrabold sm:text-4xl">Шта треба да проверимо?</h2>
+                    <p class="mt-3 max-w-2xl leading-7 text-ink/70">Теме су унете на основу навода мештана и представљају полазну тачку за проверу, не званичне налазе. Допуните их местом, примерима и предлогом решења.</p>
+                </div>
+                <div class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 shadow-sm ring-1 ring-ink/10">
+                    <span class="grid h-10 w-10 place-items-center rounded-full bg-lime/50 font-display text-lg font-extrabold" id="topic-count">0</span>
+                    <span><strong id="topic-count-label" class="block text-sm">тема за разговор</strong><span class="text-xs text-ink/60">у овој листи</span></span>
+                </div>
+            </div>
+
+            <div class="mt-7 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex flex-wrap gap-2" role="group" aria-label="Филтрирај теме">
+                    <button class="filter-button rounded-full bg-pine px-4 py-2 text-sm font-bold text-white" data-filter="Све">Све</button>
+                    <button class="filter-button rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold hover:bg-white" data-filter="Путеви и безбедност">Путеви и безбедност</button>
+                    <button class="filter-button rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold hover:bg-white" data-filter="Вода и комуналне услуге">Вода и комуналне услуге</button>
+                    <button class="filter-button rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold hover:bg-white" data-filter="Отпад и животна средина">Отпад и животна средина</button>
+                    <button class="filter-button rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold hover:bg-white" data-filter="Друго">Друго</button>
+                </div>
+                <label class="flex items-center gap-2 text-sm text-ink/70"><input id="hide-complete" type="checkbox" class="h-4 w-4 accent-pine"> Сакриј завршене</label>
+            </div>
+            <div id="topic-list" class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" aria-live="polite"></div>
+            <p id="empty-state" class="hidden py-12 text-center text-ink/60">Нема тема у овом филтеру. Додајте прву.</p>
+            <p class="mt-5 text-xs leading-5 text-ink/55">Описи су пријаве мештана, не званично утврђене чињенице. Подршка и нове теме чувају се само у овом прегледачу и нису јавна пријава нити заједничко гласање.</p>
+        </section>
+
+        <section class="bg-white" id="kako">
+            <div class="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
+                <div class="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[.16em] text-clay">02 / Од разговора до промене</p>
+                        <h2 class="mt-3 font-display text-3xl font-extrabold sm:text-4xl">Не морамо све.<br>Морамо нешто.</h2>
+                        <p class="mt-5 leading-7 text-ink/70">Промена почиње кад проблем добије име, место и људе који су спремни да направе први корак.</p>
+                    </div>
+                    <ol class="grid gap-3 sm:grid-cols-2">
+                        <li class="border-l-2 border-lime bg-paper p-5"><span class="font-display text-sm font-extrabold text-clay">01</span><h3 class="mt-2 font-display text-lg font-bold">Забележимо</h3><p class="mt-2 text-sm leading-6 text-ink/70">Шта се дешава? Где тачно? Од када? Фотографија или конкретан пример помажу.</p></li>
+                        <li class="border-l-2 border-lime bg-paper p-5"><span class="font-display text-sm font-extrabold text-clay">02</span><h3 class="mt-2 font-display text-lg font-bold">Проверимо</h3><p class="mt-2 text-sm leading-6 text-ink/70">Разговарајмо са комшијама и проверимо шта је већ покушано и ко може да помогне.</p></li>
+                        <li class="border-l-2 border-lime bg-paper p-5"><span class="font-display text-sm font-extrabold text-clay">03</span><h3 class="mt-2 font-display text-lg font-bold">Договоримо се</h3><p class="mt-2 text-sm leading-6 text-ink/70">Изаберимо један остварив приоритет, поделимо задатке и одредимо рок.</p></li>
+                        <li class="border-l-2 border-lime bg-paper p-5"><span class="font-display text-sm font-extrabold text-clay">04</span><h3 class="mt-2 font-display text-lg font-bold">Пратимо резултат</h3><p class="mt-2 text-sm leading-6 text-ink/70">Објавимо шта је урађено, шта није и који је следећи корак. Без прозивања, са одговорношћу.</p></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:py-20" id="dodaj">
+            <div>
+                <p class="text-xs font-bold uppercase tracking-[.16em] text-clay">03 / Твој глас је важан</p>
+                <h2 class="mt-3 font-display text-3xl font-extrabold sm:text-4xl">Додај тему коју не смемо да превидимо.</h2>
+                <p class="mt-4 leading-7 text-ink/70">Буди конкретан/на и поштован/а. Не уноси туђе личне податке. Предлог ће се приказати у овом прегледачу.</p>
+                <div class="mt-7 border-t border-ink/15 pt-5 text-sm leading-6 text-ink/65">За стварну акцију, разговарај са комшијама и надлежнима, предложи састанак или организуј малу заједничку активност. Ова страница сама не шаље пријаве.</div>
+            </div>
+            <form id="topic-form" class="space-y-4 rounded-lg bg-white p-6 shadow-sm ring-1 ring-ink/10 sm:p-8">
+                <div>
+                    <label for="topic-title" class="mb-1.5 block text-sm font-bold">Тема или проблем</label>
+                    <input id="topic-title" name="title" required maxlength="70" class="w-full rounded-md border border-ink/20 bg-paper px-3 py-2.5 outline-none focus:border-moss focus:ring-2 focus:ring-moss/20" placeholder="нпр. Безбедан пут до школе">
+                </div>
+                <div>
+                    <label for="topic-details" class="mb-1.5 block text-sm font-bold">Шта примећујеш и где?</label>
+                    <textarea id="topic-details" name="details" required maxlength="240" rows="3" class="w-full resize-y rounded-md border border-ink/20 bg-paper px-3 py-2.5 outline-none focus:border-moss focus:ring-2 focus:ring-moss/20" placeholder="Наведи место, пример и шта би могло да помогне."></textarea>
+                </div>
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <div>
+                        <label for="topic-category" class="mb-1.5 block text-sm font-bold">Област</label>
+                        <select id="topic-category" class="w-full rounded-md border border-ink/20 bg-paper px-3 py-2.5 outline-none focus:border-moss"><option>Путеви и безбедност</option><option>Вода и комуналне услуге</option><option>Отпад и животна средина</option><option>Друго</option></select>
+                    </div>
+                    <div>
+                        <label for="topic-action" class="mb-1.5 block text-sm font-bold">Први могући корак</label>
+                        <input id="topic-action" maxlength="100" class="w-full rounded-md border border-ink/20 bg-paper px-3 py-2.5 outline-none focus:border-moss" placeholder="нпр. заједнички обилазак">
+                    </div>
+                </div>
+                <button class="w-full rounded-full bg-pine px-5 py-3 font-bold text-white transition hover:bg-moss" type="submit">Додај у отворену листу <span aria-hidden="true">↗</span></button>
+                <p id="form-message" class="hidden text-sm font-semibold text-moss" role="status"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-pine text-white">
+        <div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-7 text-sm sm:px-8 md:flex-row md:items-center md:justify-between">
+            <p class="font-display font-bold">Кршевица је вредна нашег труда.</p>
+            <p class="text-white/60">Заједничка листа мештана · Отворена за допуне и исправке</p>
+        </div>
+    </footer>
+
+    <script>
+        const starterTopics = [
+            { id: 'lighting', title: 'Јавна расвета и њено одржавање', details: 'Према наводима мештана, велики део расвете на главном и прилазним путевима не ради, а кварове је тешко пријавити и поправке се дуго чекају. Обим квара и обавезе из уговора треба проверити.', category: 'Вода и комуналне услуге', action: 'Попунити списак локација са неисправном расветом и затражити план одржавања' },
+            { id: 'water-supply', title: 'Снабдевање водом у вишим деловима села', details: 'Мештани пријављују да током летњих врућина вода не стиже редовно до виших делова села. Узрок није утврђен; претпоставке о резервоарима, пумпама или потрошњи треба проверити мерењима и званичним одговором.', category: 'Вода и комуналне услуге', action: 'Бележити време и локације прекида и затражити писмено објашњење од надлежних' },
+            { id: 'traffic-signage', title: 'Саобраћајна сигнализација и безбедно кретање', details: 'Пријављени су недостаци у сигнализацији дуж пута кроз село и на улазима и излазима. Потребно је утврдити критичне тачке и проценити знакове, огледала, осветљење и мере за успоравање саобраћаја.', category: 'Путеви и безбедност', action: 'Заједнички обићи пут и направити мапу критичних тачака' },
+            { id: 'waste-containers', title: 'Контејнери и канте за одлагање отпада', details: 'Према наводима мештана, у селу нема јавних контејнера, па део људи отпад односи у друга села, док се на појединим местима стварају дивље депоније. Проверити могућности за редован одвоз и постављање посуда.', category: 'Отпад и животна средина', action: 'Затражити план одлагања отпада и предложити приступачне локације за контејнере' },
+            { id: 'sewerage', title: 'Планирање канализационе мреже', details: 'Мештани указују на потребу за покретањем разговора о канализационој мрежи. Први корак је утврдити постојеће планове, надлежности, могућности финансирања и приоритете за село.', category: 'Вода и комуналне услуге', action: 'Затражити информације о плановима и организовати разговор мештана са надлежнима' },
+            { id: 'illegal-dumps', title: 'Санација дивљих депонија', details: 'Потребно је пописати локације на којима се отпад одлаже ван предвиђених места, утврдити ко је надлежан за уклањање и спречити поновно настајање депонија.', category: 'Отпад и животна средина', action: 'Направити списак локација са фотографијама и пријавити их надлежној служби' },
+            { id: 'river-protection', title: 'Заштита Кршевичке реке', details: 'Мештани желе да се река заштити од отпада, отпадних вода, хемикалија и шута. Стање и могући извори загађења треба документовати и проверити са надлежним службама.', category: 'Отпад и животна средина', action: 'Бележити локације и врсту уоченог отпада и затражити проверу надлежних' },
+            { id: 'access-roads', title: 'Безбедност и ширина прилазних путева', details: 'Прилазни путеви су на појединим местима толико уски да се два возила тешко мимоилазе. Мештани пријављују и ризик од упадања у одводни канал код спојева са главним путем; потребна је стручна процена.', category: 'Путеви и безбедност', action: 'Означити уска и ризична места, забележити инциденте и затражити стручни преглед' }
+        ];
+        const storageKey = 'krsevice-civic-topics-v2';
+        const previousStorageKey = 'krsevice-civic-topics-v1';
+        let topics = loadTopics();
+        let activeFilter = 'Све';
+        const list = document.querySelector('#topic-list');
+
+        function loadTopics() {
+            try {
+                const stored = localStorage.getItem(storageKey);
+                if (stored !== null) {
+                    const savedTopics = JSON.parse(stored);
+                    return Array.isArray(savedTopics) ? savedTopics : starterTopics.map(topic => ({ ...topic, votes: 0, done: false }));
+                }
+                const previousTopics = JSON.parse(localStorage.getItem(previousStorageKey) || '[]');
+                const validCategories = starterTopics.map(topic => topic.category).concat('Друго');
+                const userTopics = Array.isArray(previousTopics) ? previousTopics
+                    .filter(topic => typeof topic?.id === 'string' && topic.id.startsWith('local-'))
+                    .map(topic => ({ ...topic, category: validCategories.includes(topic.category) ? topic.category : 'Друго' })) : [];
+                return [...starterTopics.map(topic => ({ ...topic, votes: 0, done: false })), ...userTopics];
+            } catch {
+                return starterTopics.map(topic => ({ ...topic, votes: 0, done: false }));
+            }
+        }
+
+        function saveTopics() {
+            try { localStorage.setItem(storageKey, JSON.stringify(topics)); } catch { /* Storage may be disabled. */ }
+        }
+
+        function renderTopics() {
+            const hideComplete = document.querySelector('#hide-complete').checked;
+            const visibleTopics = topics.filter(topic => (activeFilter === 'Све' || topic.category === activeFilter) && (!hideComplete || !topic.done));
+            document.querySelector('#topic-count').textContent = topics.length;
+            const lastTwoDigits = topics.length % 100;
+            const lastDigit = topics.length % 10;
+            document.querySelector('#topic-count-label').textContent = lastTwoDigits >= 11 && lastTwoDigits <= 14 ? 'тема за разговор' : lastDigit === 1 ? 'тема за разговор' : lastDigit >= 2 && lastDigit <= 4 ? 'теме за разговор' : 'тема за разговор';
+            document.querySelector('#empty-state').classList.toggle('hidden', visibleTopics.length !== 0);
+            list.innerHTML = visibleTopics.map(topic => `
+                <article class="fade-up flex flex-col rounded-lg bg-white p-5 shadow-sm ring-1 ring-ink/10 ${topic.done ? 'opacity-65' : ''}">
+                    <div class="flex items-start justify-between gap-3"><span class="rounded-full bg-lime/40 px-3 py-1 text-xs font-bold text-pine">${escapeHTML(topic.category)}</span><button class="done-button text-xs font-bold ${topic.done ? 'text-moss' : 'text-ink/45 hover:text-moss'}" data-id="${escapeHTML(topic.id)}" aria-label="${topic.done ? 'Врати у активне теме' : 'Означи као решено'}">${topic.done ? '✓ Решено' : '○ Отворено'}</button></div>
+                    <h3 class="mt-4 font-display text-xl font-extrabold ${topic.done ? 'line-through' : ''}">${escapeHTML(topic.title)}</h3>
+                    <p class="mt-2 flex-1 text-sm leading-6 text-ink/70">${escapeHTML(topic.details)}</p>
+                    ${topic.action ? `<p class="mt-4 border-t border-ink/10 pt-3 text-sm"><span class="font-bold text-clay">Први корак:</span> ${escapeHTML(topic.action)}</p>` : ''}
+                    <div class="mt-4 flex items-center justify-between border-t border-ink/10 pt-3"><span class="text-xs text-ink/50">Подршка у овом прегледачу</span><button class="support-button inline-flex items-center gap-2 rounded-full border border-ink/15 px-3 py-1.5 text-sm font-bold transition hover:border-moss hover:text-moss" data-id="${escapeHTML(topic.id)}" aria-label="Подржи тему ${escapeHTML(topic.title)}">↑ <span>${Number(topic.votes) || 0}</span></button></div>
+                </article>`).join('');
+        }
+
+        function escapeHTML(value) {
+            return String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
+        }
+
+        document.querySelectorAll('.filter-button').forEach(button => button.addEventListener('click', () => {
+            activeFilter = button.dataset.filter;
+            document.querySelectorAll('.filter-button').forEach(item => {
+                item.classList.toggle('bg-pine', item === button);
+                item.classList.toggle('text-white', item === button);
+                item.classList.toggle('font-bold', item === button);
+                item.classList.toggle('border', item !== button);
+                item.classList.toggle('border-ink/15', item !== button);
+                item.classList.toggle('font-semibold', item !== button);
+            });
+            renderTopics();
+        }));
+        document.querySelector('#hide-complete').addEventListener('change', renderTopics);
+        list.addEventListener('click', event => {
+            const button = event.target.closest('button');
+            if (!button) return;
+            const topic = topics.find(item => item.id === button.dataset.id);
+            if (!topic) return;
+            if (button.classList.contains('support-button')) topic.votes = (Number(topic.votes) || 0) + 1;
+            if (button.classList.contains('done-button')) topic.done = !topic.done;
+            saveTopics();
+            renderTopics();
+        });
+        document.querySelector('#topic-form').addEventListener('submit', event => {
+            event.preventDefault();
+            const form = event.currentTarget;
+            const data = new FormData(form);
+            topics.unshift({
+                id: `local-${Date.now()}`,
+                title: data.get('title').trim(),
+                details: data.get('details').trim(),
+                category: document.querySelector('#topic-category').value,
+                action: document.querySelector('#topic-action').value.trim(),
+                votes: 0,
+                done: false
+            });
+            saveTopics();
+            activeFilter = 'Све';
+            document.querySelectorAll('.filter-button').forEach(button => {
+                const selected = button.dataset.filter === 'Све';
+                button.classList.toggle('bg-pine', selected);
+                button.classList.toggle('text-white', selected);
+                button.classList.toggle('font-bold', selected);
+                button.classList.toggle('border', !selected);
+                button.classList.toggle('border-ink/15', !selected);
+                button.classList.toggle('font-semibold', !selected);
+            });
+            document.querySelector('#hide-complete').checked = false;
+            renderTopics();
+            form.reset();
+            const message = document.querySelector('#form-message');
+            message.textContent = 'Тема је додата у листу на овом уређају.';
+            message.classList.remove('hidden');
+            setTimeout(() => message.classList.add('hidden'), 4000);
+        });
+        renderTopics();
+    </script>
+</body>
+</html>
