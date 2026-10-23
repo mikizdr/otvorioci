@@ -39,6 +39,7 @@
             background-image: repeating-radial-gradient(ellipse at 72% 38%, transparent 0 18px, rgba(216,240,120,.14) 19px 20px, transparent 21px 37px), repeating-radial-gradient(ellipse at 20% 85%, transparent 0 25px, rgba(255,255,255,.09) 26px 27px, transparent 28px 49px);
         }
         .fade-up { animation: rise .6s ease-out both; }
+        #topic-dialog::backdrop { background: rgba(12, 27, 19, .72); }
         @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
         @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; } }
     </style>
@@ -92,6 +93,22 @@
         </section>
 
         <section class="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20" id="teme">
+            <aside class="mb-12 overflow-hidden rounded-xl border border-clay/30 bg-white shadow-lg ring-1 ring-clay/10">
+                <div class="flex items-center gap-3 bg-pine px-5 py-4 text-white sm:px-7">
+                    <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-lime font-display text-xl font-extrabold text-pine" aria-hidden="true">!</span>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[.16em] text-lime">Важно за све нас</p>
+                        <h2 class="mt-1 font-display text-xl font-extrabold sm:text-2xl">Село смо ми</h2>
+                    </div>
+                </div>
+                <div class="space-y-4 border-l-4 border-clay px-5 py-6 text-sm leading-7 text-ink/80 sm:px-7 sm:py-7 sm:text-base">
+                    <p>Драги пријатељи, комшије и радни људи нашег села,<br>
+                    време је да отворено кажемо оно што сви видимо: наше село је препуштено само себи. Власт, која је требало да брине о нама, није учинила ништа — не зато што није могла, већ зато што није знала, није хтела или је гледала само лични интерес.</p>
+                    <p>Због нестручности, непознавања посла, неискуства и корупције, наше путеве, школе, поља и домове нико није погледао. Док су се други развијали, ми смо стајали у месту.</p>
+                    <p>Али село није само власт — село смо ми! Ако се ми не изборимо за своју воду, струју, пут и достојан живот, нико други неће. Време је да се ујединимо, да тражимо оно што нам припада, да покажемо да знамо, можемо и хоћемо боље!</p>
+                    <p class="font-semibold text-pine">Наше руке су чисте, наша намера је поштена — и зато имамо право да захтевамо правду и рад за све, а не само за појединце.</p>
+                </div>
+            </aside>
             <div class="flex flex-col justify-between gap-6 border-b border-ink/15 pb-7 md:flex-row md:items-end">
                 <div>
                     <p class="text-xs font-bold uppercase tracking-[.16em] text-clay">01 / Отворена листа</p>
@@ -110,13 +127,14 @@
                     <button class="filter-button rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold hover:bg-white" data-filter="Путеви и безбедност">Путеви и безбедност</button>
                     <button class="filter-button rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold hover:bg-white" data-filter="Вода и комуналне услуге">Вода и комуналне услуге</button>
                     <button class="filter-button rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold hover:bg-white" data-filter="Отпад и животна средина">Отпад и животна средина</button>
+                    <button class="filter-button rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold hover:bg-white" data-filter="Културно наслеђе">Културно наслеђе</button>
                     <button class="filter-button rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold hover:bg-white" data-filter="Друго">Друго</button>
                 </div>
                 <label class="flex items-center gap-2 text-sm text-ink/70"><input id="hide-complete" type="checkbox" class="h-4 w-4 accent-pine"> Сакриј завршене</label>
             </div>
             <div id="topic-list" class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" aria-live="polite"></div>
             <p id="empty-state" class="hidden py-12 text-center text-ink/60">Нема тема у овом филтеру. Додајте прву.</p>
-            <p class="mt-5 text-xs leading-5 text-ink/55">Описи су пријаве мештана, не званично утврђене чињенице. Подршка и нове теме чувају се само у овом прегледачу и нису јавна пријава нити заједничко гласање.</p>
+            <p class="mt-5 text-xs leading-5 text-ink/55">Описи су пријаве мештана, не званично утврђене чињенице. Детаљи и нове теме приказују се само у овом прегледачу и не представљају јавну пријаву.</p>
         </section>
 
         <section class="bg-white" id="kako">
@@ -156,7 +174,7 @@
                 <div class="grid gap-4 sm:grid-cols-2">
                     <div>
                         <label for="topic-category" class="mb-1.5 block text-sm font-bold">Област</label>
-                        <select id="topic-category" class="w-full rounded-md border border-ink/20 bg-paper px-3 py-2.5 outline-none focus:border-moss"><option>Путеви и безбедност</option><option>Вода и комуналне услуге</option><option>Отпад и животна средина</option><option>Друго</option></select>
+                        <select id="topic-category" class="w-full rounded-md border border-ink/20 bg-paper px-3 py-2.5 outline-none focus:border-moss"><option>Путеви и безбедност</option><option>Вода и комуналне услуге</option><option>Отпад и животна средина</option><option>Културно наслеђе</option><option>Друго</option></select>
                     </div>
                     <div>
                         <label for="topic-action" class="mb-1.5 block text-sm font-bold">Први могући корак</label>
@@ -167,6 +185,7 @@
                 <p id="form-message" class="hidden text-sm font-semibold text-moss" role="status"></p>
             </form>
         </section>
+
     </main>
 
     <footer class="bg-pine text-white">
@@ -176,16 +195,47 @@
         </div>
     </footer>
 
+    <dialog id="topic-dialog" class="w-[calc(100%-2rem)] max-w-2xl rounded-lg bg-paper p-0 text-ink shadow-2xl backdrop:bg-pine/70" aria-labelledby="dialog-title" aria-describedby="dialog-details">
+        <div class="flex max-h-[85vh] flex-col">
+            <div class="flex items-start justify-between gap-4 border-b border-ink/10 p-5 sm:p-7">
+                <div>
+                    <span id="dialog-category" class="inline-block rounded-full bg-lime/50 px-3 py-1 text-xs font-bold text-pine"></span>
+                    <h2 id="dialog-title" class="mt-3 font-display text-2xl font-extrabold sm:text-3xl"></h2>
+                </div>
+                <button id="dialog-close" class="grid h-10 w-10 shrink-0 place-items-center rounded-full text-2xl leading-none text-ink/60 transition hover:bg-ink/5 hover:text-ink focus:outline-none focus:ring-2 focus:ring-moss" type="button" aria-label="Затвори детаље">×</button>
+            </div>
+            <div class="overflow-y-auto p-5 sm:p-7">
+                <h3 class="text-sm font-bold uppercase tracking-wide text-clay">О проблему</h3>
+                <p id="dialog-details" class="mt-3 whitespace-pre-line leading-7 text-ink/80"></p>
+                <div id="dialog-sources-wrap" class="mt-6 hidden border-t border-ink/10 pt-5">
+                    <h3 class="text-sm font-bold uppercase tracking-wide text-clay">Извори</h3>
+                    <ul id="dialog-sources" class="mt-2 list-inside list-disc space-y-1 text-sm"></ul>
+                </div>
+                <div id="dialog-action-wrap" class="mt-6 border-t border-ink/10 pt-5">
+                    <h3 class="text-sm font-bold uppercase tracking-wide text-clay">Могући први корак</h3>
+                    <p id="dialog-action" class="mt-2 leading-7 text-ink/80"></p>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
     <script>
         const starterTopics = [
-            { id: 'lighting', title: 'Јавна расвета и њено одржавање', details: 'Према наводима мештана, велики део расвете на главном и прилазним путевима не ради, а кварове је тешко пријавити и поправке се дуго чекају. Обим квара и обавезе из уговора треба проверити.', category: 'Вода и комуналне услуге', action: 'Попунити списак локација са неисправном расветом и затражити план одржавања' },
-            { id: 'water-supply', title: 'Снабдевање водом у вишим деловима села', details: 'Мештани пријављују да током летњих врућина вода не стиже редовно до виших делова села. Узрок није утврђен; претпоставке о резервоарима, пумпама или потрошњи треба проверити мерењима и званичним одговором.', category: 'Вода и комуналне услуге', action: 'Бележити време и локације прекида и затражити писмено објашњење од надлежних' },
-            { id: 'traffic-signage', title: 'Саобраћајна сигнализација и безбедно кретање', details: 'Пријављени су недостаци у сигнализацији дуж пута кроз село и на улазима и излазима. Потребно је утврдити критичне тачке и проценити знакове, огледала, осветљење и мере за успоравање саобраћаја.', category: 'Путеви и безбедност', action: 'Заједнички обићи пут и направити мапу критичних тачака' },
-            { id: 'waste-containers', title: 'Контејнери и канте за одлагање отпада', details: 'Према наводима мештана, у селу нема јавних контејнера, па део људи отпад односи у друга села, док се на појединим местима стварају дивље депоније. Проверити могућности за редован одвоз и постављање посуда.', category: 'Отпад и животна средина', action: 'Затражити план одлагања отпада и предложити приступачне локације за контејнере' },
-            { id: 'sewerage', title: 'Планирање канализационе мреже', details: 'Мештани указују на потребу за покретањем разговора о канализационој мрежи. Први корак је утврдити постојеће планове, надлежности, могућности финансирања и приоритете за село.', category: 'Вода и комуналне услуге', action: 'Затражити информације о плановима и организовати разговор мештана са надлежнима' },
-            { id: 'illegal-dumps', title: 'Санација дивљих депонија', details: 'Потребно је пописати локације на којима се отпад одлаже ван предвиђених места, утврдити ко је надлежан за уклањање и спречити поновно настајање депонија.', category: 'Отпад и животна средина', action: 'Направити списак локација са фотографијама и пријавити их надлежној служби' },
-            { id: 'river-protection', title: 'Заштита Кршевичке реке', details: 'Мештани желе да се река заштити од отпада, отпадних вода, хемикалија и шута. Стање и могући извори загађења треба документовати и проверити са надлежним службама.', category: 'Отпад и животна средина', action: 'Бележити локације и врсту уоченог отпада и затражити проверу надлежних' },
-            { id: 'access-roads', title: 'Безбедност и ширина прилазних путева', details: 'Прилазни путеви су на појединим местима толико уски да се два возила тешко мимоилазе. Мештани пријављују и ризик од упадања у одводни канал код спојева са главним путем; потребна је стручна процена.', category: 'Путеви и безбедност', action: 'Означити уска и ризична места, забележити инциденте и затражити стручни преглед' }
+            { id: 'lighting', title: 'Јавна расвета и њено одржавање', details: 'Мештани наводе да улична расвета на главном путу и прилазним путевима готово да не постоји или не функционише. Према њиховом искуству, тешко је добити реакцију фирме из Бујановца која одржава расвету: замена сијалица, поправка постојећих светиљки и постављање нових се дуго чекају. У пријави се наводи да је одржавање обухваћено уговором и да би обиласци и брза реакција требало да буду део услуге; уговорне обавезе и стварно стање треба проверити са надлежнима.', category: 'Вода и комуналне услуге', action: 'Попунити списак локација са неисправном расветом и затражити увид у план и обавезе одржавања' },
+            { id: 'water-supply', title: 'Снабдевање водом у вишим деловима села', details: 'Мештани пријављују да током летњих врућина вода не стиже до виших делова села, углавном изнад главног пута у правцу Кршевица–Прохор Пчињски. Узрок није утврђен. Као могућности се помињу заливање башти, недовољан капацитет резервоара или мањак воде у њима, али то су непроверене претпоставке; резервоари и пумпе налазе се у Клиновцу. Мештани истичу да редовно плаћају рачуне и траже објашњење за прекиде и равномерно снабдевање.', category: 'Вода и комуналне услуге', action: 'Бележити време и локације прекида и затражити писмени одговор о стању резервоара, пумпи и узроцима' },
+            { id: 'traffic-signage', title: 'Саобраћајна сигнализација и безбедно кретање', details: 'Пријављена је лоша или непостојећа саобраћајна сигнализација дуж пута кроз село, као и на улазима и излазима. Без прегледа терена није познато које су тачке најризичније нити која је мера најпримеренија. Потребно је проценити где су потребни саобраћајни знакови, лежећи полицајци, огледала или осветљење.', category: 'Путеви и безбедност', action: 'Заједнички обићи пут и направити мапу критичних тачака за стручну процену' },
+            { id: 'waste-containers', title: 'Контејнери и канте за одлагање отпада', details: 'Мештани наводе да у селу нема контејнера за одлагање отпада, па није јасно где се смеће може редовно одлагати. Неки га, према пријави, односе у контејнере у оближњим селима када путују ка Врању, док се отпад на другим местима одлаже на дивљим депонијама. Потребно је договорити доступна места за одлагање и организован одвоз.', category: 'Отпад и животна средина', action: 'Затражити план одлагања отпада и предложити приступачне локације за контејнере' },
+            { id: 'sewerage', title: 'Планирање канализационе мреже', details: 'Мештани указују на непостојање иницијативе за уређење канализационе мреже. За сада нису наведени подаци о плановима или обухвату радова, па први корак треба да буде провера надлежности, постојећих планова и могућности финансирања.', category: 'Вода и комуналне услуге', action: 'Затражити информације о плановима и организовати разговор мештана са надлежнима' },
+            { id: 'illegal-dumps', title: 'Санација дивљих депонија', details: 'Потребно је пописати локације на којима се отпад одлаже ван предвиђених места, утврдити ко је надлежан за уклањање и спречити поновно настајање депонија. За почетак треба утврдити стање и обим отпада на свакој локацији.', category: 'Отпад и животна средина', action: 'Направити списак локација са фотографијама и пријавити их надлежној служби' },
+            { id: 'river-protection', title: 'Заштита Кршевичке реке', details: 'У пријави се тражи заштита Кршевичке реке од смећа, отпадних вода, хемикалија и шута. Нису наведени проверени извори загађења, па је важно прво документовати где и шта је уочено, а затим затражити проверу стања од надлежних служби.', category: 'Отпад и животна средина', action: 'Бележити локације и врсту уоченог отпада или испуста и затражити проверу надлежних' },
+            { id: 'access-roads', title: 'Безбедност и ширина прилазних путева', details: 'Мештани наводе да су прилазни путеви до главног пута на појединим местима толико уски да се два аутомобила не могу безбедно мимоићи. Додатни ризик представљају спојеви прилазних путева са главним путем: у одводном каналу су постављене цеви, али је прелаз преко њих узак, па возила могу да склизну у канал. У пријави се наводи да је већ било таквих инцидената. Потребни су преглед изведених радова и стручна процена безбедног решења.', category: 'Путеви и безбедност', action: 'Означити уска и ризична места, забележити инциденте и затражити стручни преглед путева и прелаза' },
+            { id: 'kale-krsevice', title: 'Шта је са археолошким налазиштем?', details: 'Кале–Кршевица је значајно античко археолошко налазиште из 4. и 3. века пре нове ере, смештено на обронцима планине Рујен у селу Кршевица, око 15 километара јужно од Врања и недалеко од Бујановца.', category: 'Културно наслеђе', action: 'Отворити разговор о стању налазишта, његовој заштити и начинима да се културно наслеђе Кршевице представи и сачува.', sources: [
+                'Положај и величина: Простире се на издуженом платоу површине од око 5 хектара у долини Јужне Мораве, на важном природном правцу који повезује Поморавље са долином Вардара и Егејским морем.',
+                'Урбана архитектура: Насеље је саграђено по грчком моделу са каменим структурама, укључујући комплетан систем за снабдевање водом и камену цистерну. Сматра се најсевернијим урбаним насељем такве врсте из тог периода.',
+                'Везе са Грчком и Македонијом: Пронађене су бројне грчке увозне посуде (црвенофигуралне и West Slope технике из Атике), као и транспортне амфоре са Тасоса, Менде и Хиоса. Локалитет сведочи о процесима „хеленизације“ унутрашњости Балкана.',
+                'Млађи хоризонт: У периоду од 2. до 1. века пре нове ере, напуштену акрополу су користили Келти (Скордисци) као своје утврђење.',
+                'Истраживања: Локалитет је познат од 1966. године, а систематска истраживања су обновљена 2001. године у организацији Археолошког института из Београда, Народног музеја у Београду, Филозофског факултета у Београду и Народног музеја у Врању.'
+            ] }
         ];
         const storageKey = 'krsevice-civic-topics-v2';
         const previousStorageKey = 'krsevice-civic-topics-v1';
@@ -198,16 +248,20 @@
                 const stored = localStorage.getItem(storageKey);
                 if (stored !== null) {
                     const savedTopics = JSON.parse(stored);
-                    return Array.isArray(savedTopics) ? savedTopics : starterTopics.map(topic => ({ ...topic, votes: 0, done: false }));
+                    if (!Array.isArray(savedTopics)) return starterTopics.map(topic => ({ ...topic, done: false }));
+                    const savedById = new Map(savedTopics.filter(topic => typeof topic?.id === 'string').map(topic => [topic.id, topic]));
+                    const currentTopics = starterTopics.map(topic => ({ ...topic, done: Boolean(savedById.get(topic.id)?.done) }));
+                    const otherTopics = savedTopics.filter(topic => typeof topic?.id === 'string' && !starterTopics.some(starter => starter.id === topic.id));
+                    return [...currentTopics, ...otherTopics];
                 }
                 const previousTopics = JSON.parse(localStorage.getItem(previousStorageKey) || '[]');
                 const validCategories = starterTopics.map(topic => topic.category).concat('Друго');
                 const userTopics = Array.isArray(previousTopics) ? previousTopics
                     .filter(topic => typeof topic?.id === 'string' && topic.id.startsWith('local-'))
                     .map(topic => ({ ...topic, category: validCategories.includes(topic.category) ? topic.category : 'Друго' })) : [];
-                return [...starterTopics.map(topic => ({ ...topic, votes: 0, done: false })), ...userTopics];
+                return [...starterTopics.map(topic => ({ ...topic, done: false })), ...userTopics];
             } catch {
-                return starterTopics.map(topic => ({ ...topic, votes: 0, done: false }));
+                return starterTopics.map(topic => ({ ...topic, done: false }));
             }
         }
 
@@ -224,12 +278,12 @@
             document.querySelector('#topic-count-label').textContent = lastTwoDigits >= 11 && lastTwoDigits <= 14 ? 'тема за разговор' : lastDigit === 1 ? 'тема за разговор' : lastDigit >= 2 && lastDigit <= 4 ? 'теме за разговор' : 'тема за разговор';
             document.querySelector('#empty-state').classList.toggle('hidden', visibleTopics.length !== 0);
             list.innerHTML = visibleTopics.map(topic => `
-                <article class="fade-up flex flex-col rounded-lg bg-white p-5 shadow-sm ring-1 ring-ink/10 ${topic.done ? 'opacity-65' : ''}">
+                <article class="fade-up flex flex-col rounded-lg ${topic.id === 'kale-krsevice' ? 'border-2 border-clay bg-lime/20 p-6 shadow-lg ring-2 ring-clay/15 md:col-span-2 xl:col-span-3' : 'bg-white p-5 shadow-sm ring-1 ring-ink/10'} ${topic.done ? 'opacity-65' : ''}">
                     <div class="flex items-start justify-between gap-3"><span class="rounded-full bg-lime/40 px-3 py-1 text-xs font-bold text-pine">${escapeHTML(topic.category)}</span><button class="done-button text-xs font-bold ${topic.done ? 'text-moss' : 'text-ink/45 hover:text-moss'}" data-id="${escapeHTML(topic.id)}" aria-label="${topic.done ? 'Врати у активне теме' : 'Означи као решено'}">${topic.done ? '✓ Решено' : '○ Отворено'}</button></div>
-                    <h3 class="mt-4 font-display text-xl font-extrabold ${topic.done ? 'line-through' : ''}">${escapeHTML(topic.title)}</h3>
-                    <p class="mt-2 flex-1 text-sm leading-6 text-ink/70">${escapeHTML(topic.details)}</p>
-                    ${topic.action ? `<p class="mt-4 border-t border-ink/10 pt-3 text-sm"><span class="font-bold text-clay">Први корак:</span> ${escapeHTML(topic.action)}</p>` : ''}
-                    <div class="mt-4 flex items-center justify-between border-t border-ink/10 pt-3"><span class="text-xs text-ink/50">Подршка у овом прегледачу</span><button class="support-button inline-flex items-center gap-2 rounded-full border border-ink/15 px-3 py-1.5 text-sm font-bold transition hover:border-moss hover:text-moss" data-id="${escapeHTML(topic.id)}" aria-label="Подржи тему ${escapeHTML(topic.title)}">↑ <span>${Number(topic.votes) || 0}</span></button></div>
+                    ${topic.id === 'kale-krsevice' ? '<p class="mt-4 text-xs font-extrabold uppercase tracking-[.16em] text-clay">Посебно важна тема · Наслеђе нашег краја</p>' : ''}
+                    <h3 class="mt-4 font-display ${topic.id === 'kale-krsevice' ? 'text-2xl text-pine sm:text-3xl' : 'text-xl'} font-extrabold ${topic.done ? 'line-through' : ''}">${escapeHTML(topic.title)}</h3>
+                    <p class="mt-2 flex-1 text-sm leading-6 text-ink/70">${escapeHTML(topic.details.length > 170 ? `${topic.details.slice(0, 170).trimEnd()}…` : topic.details)}</p>
+                    <button class="show-more-button mt-4 self-start rounded-full border border-pine px-4 py-2 text-sm font-bold text-pine transition hover:bg-pine hover:text-white focus:outline-none focus:ring-2 focus:ring-moss focus:ring-offset-2" data-id="${escapeHTML(topic.id)}" type="button">Прикажи више</button>
                 </article>`).join('');
         }
 
@@ -250,12 +304,42 @@
             renderTopics();
         }));
         document.querySelector('#hide-complete').addEventListener('change', renderTopics);
+        const topicDialog = document.querySelector('#topic-dialog');
+        const dialogTitle = document.querySelector('#dialog-title');
+        const dialogCategory = document.querySelector('#dialog-category');
+        const dialogDetails = document.querySelector('#dialog-details');
+        const dialogAction = document.querySelector('#dialog-action');
+        const dialogActionWrap = document.querySelector('#dialog-action-wrap');
+        const dialogSourcesWrap = document.querySelector('#dialog-sources-wrap');
+        const dialogSources = document.querySelector('#dialog-sources');
+        list.addEventListener('click', event => {
+            const button = event.target.closest('.show-more-button');
+            if (!button) return;
+            const topic = topics.find(item => item.id === button.dataset.id);
+            if (!topic) return;
+            dialogTitle.textContent = topic.title;
+            dialogCategory.textContent = topic.category;
+            dialogDetails.textContent = topic.details;
+            dialogAction.textContent = topic.action || '';
+            dialogActionWrap.classList.toggle('hidden', !topic.action);
+            dialogSources.replaceChildren(...(topic.sources || []).map(source => {
+                const item = document.createElement('li');
+                item.textContent = source;
+                return item;
+            }));
+            dialogSourcesWrap.classList.toggle('hidden', !topic.sources?.length);
+            topicDialog.showModal();
+        });
+        document.querySelector('#dialog-close').addEventListener('click', () => topicDialog.close());
+        topicDialog.addEventListener('cancel', () => topicDialog.close());
+        topicDialog.addEventListener('click', event => {
+            if (event.target === topicDialog) topicDialog.close();
+        });
         list.addEventListener('click', event => {
             const button = event.target.closest('button');
             if (!button) return;
             const topic = topics.find(item => item.id === button.dataset.id);
             if (!topic) return;
-            if (button.classList.contains('support-button')) topic.votes = (Number(topic.votes) || 0) + 1;
             if (button.classList.contains('done-button')) topic.done = !topic.done;
             saveTopics();
             renderTopics();
